@@ -37,7 +37,7 @@ int main(int argc, char **argv) {
 	}
 	
 	char http_req[1400];
-	snprintf(http_req, sizeof(http_req), "CONNECT %s:%s HTTP/1.1\n\n", argv[1], argv[2]);
+	snprintf(http_req, sizeof(http_req), "REPLACE ME", argv[1], argv[2]);
 	if (write(sock, http_req, strlen(http_req)) < 0) {
 		printf("Failed to write to socket\n");
 		return 1;
@@ -59,7 +59,7 @@ int main(int argc, char **argv) {
 	}
 
 	char get_req[1400];
-	snprintf(get_req, sizeof(get_req), "GET / HTTP/1.1\nHost: %s\nUser-Agent: curl/1.61.7\nAccept: */*\n\n", argv[1]);
+	snprintf(get_req, sizeof(get_req), "REPLACE ME TOO", argv[1]);
 	if (write(sock, get_req, strlen(get_req)) < 0) {
 		printf("Failed to send request\n");
 		return 1;
