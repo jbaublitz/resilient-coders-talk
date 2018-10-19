@@ -1,2 +1,2 @@
 client: client.c
-	gcc -o client client.c
+	clang -Wall -o client client.c
